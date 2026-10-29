@@ -1,0 +1,46 @@
+{
+  "root": { "props": {} },
+  "content": [
+    {
+      "type": "Section",
+      "props": {
+        "id": "sobre-a-tulpa",
+        "title": "Sobre a Tulpa",
+        "body": "<p>Ao contrário de um artefato comum, uma tulpa não possui uma forma de item e nem pode ser usada em sua forma humanoide/bestial como aliado de maneira convencional, se manifestando apenas como uma visão dentro da mente do seu usuário. Tulpas se manifestam pelos mais diversos motivos, mas as duas mais comuns vêm de mentes perturbadas que lutam contra si mesmas e daqueles carentes de afeto. Alguns dizem que pode se forçar a criação de uma Tulpa, mas eu não recomendaria…</p>"
+      }
+    },
+    { "type": "Heading", "props": { "title": "Opções de Habilidades", "level": "h2" } },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "voce-deveria-se",
+        "name": "VOCÊ deveria se…",
+        "traits": "",
+        "kind": "TULPA",
+        "cost": "UMA AÇÃO",
+        "range": "DISTÂNCIA EXTREMA",
+        "duration": "",
+        "limit": "1 uso por combate",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Sua tulpa foi manifestada a partir de seus pensamentos auto-destrutivos. Um pulso psíquico é emanado a partir do usuário em [DISTÂNCIA EXTREMA]; os afetados devem usar todas as suas ações neste turno para realizar o seu melhor ataque ou habilidade contra si mesmos. Isso obviamente afeta o próprio usuário."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "minha-tulpa",
+        "name": "MINHA TULPA…",
+        "traits": "",
+        "kind": "TULPA",
+        "cost": "",
+        "range": "",
+        "duration": "",
+        "limit": "",
+        "cooldown": "",
+        "requirements": "Você não demonstra afeto por outros seres e não tem NÍVEL DE AFINIDADE +5 com ninguém.",
+        "effect": "Sua tulpa foi manifestada a partir de seu desejo desesperado por alguém que o amasse nessa sua vida patética. A sua Tulpa ganha uma manifestação física tangível, possuindo acesso à mesma raça e habilidades que você, também sendo capaz de equipar itens, efetivamente fornecendo DOIS personagens. Caso você morra, sua tulpa também morrerá já que é uma manifestação da sua mente. Entretanto, uma tulpa criada para o afeto apresenta comportamento possessivo; demonstrar o mínimo de afeto por outros seres pode resultar em uma confusão generalizada, cabe a você ser capaz de convencer sua tulpa ou sofrer as consequências de suas ações.\n\n**Observação:** Tulpas de Elíseos não acionam ajuda divina duas vezes, é nós."
+      }
+    }
+  ]
+}

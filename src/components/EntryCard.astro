@@ -1,0 +1,21 @@
+---
+import type { Entry } from '../lib/catalog';
+import { entryPath, sectionFor } from '../lib/catalog';
+import Icon from './Icon.astro';
+interface Props { entry: Entry; featured?: boolean; }
+const { entry, featured = false } = Astro.props;
+const section = sectionFor(entry.data.section)!;
+---
+<a class:list={['entry-card', { 'entry-card-featured': featured }]} href={entryPath(entry)} data-card data-title={entry.data.title.toLowerCase()} data-tags={entry.data.tags.join(' ').toLowerCase()}>
+  <div class="entry-card-content">
+    <div class="entry-card-topline">
+      <span>{section.title}</span>
+    </div>
+    <h3>{entry.data.title}</h3>
+    <p>{entry.data.summary}</p>
+    <div class="entry-card-bottom">
+      <span>Ler registro</span>
+      <Icon name="arrow" size={17} />
+    </div>
+  </div>
+</a>

@@ -1,0 +1,54 @@
+{
+  "root": { "props": {} },
+  "content": [
+    { "type": "Heading", "props": { "title": "Opções de Habilidades", "level": "h2" } },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "conjuracao-explosiva",
+        "name": "Conjuração Explosiva",
+        "traits": "",
+        "kind": "CONJURADOR",
+        "cost": "DUAS AÇÕES",
+        "range": "DISTÂNCIA PADRÃO",
+        "duration": "",
+        "limit": "1 uso por combate",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Um círculo mágico de 8 metros se abre no ponto escolhido, pulsando com uma atração que dificulta a fuga dos que estão dentro. Após 1 turno de canalização, colapsa em uma explosão de mana pura causando 65 de PODER em dano mágico a todos na área."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "conjuracao-de-socorro",
+        "name": "Conjuração de Socorro",
+        "traits": "",
+        "kind": "CONJURADOR",
+        "cost": "25 de mana, UMA AÇÃO",
+        "range": "DISTÂNCIA PADRÃO",
+        "duration": "3 turnos",
+        "limit": "",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "O usuário firma contrato com um espírito elemental menor, podendo invocá-lo em campo pelo mesmo custo quando desejar.\n\n- 🌟 Luz — Cura\n- 🌑 Trevas — Debuff\n- 🌍 Terra — Buff\n- 💧 Água — Proteção\n- 🌀 Vento — Buff Físico\n- 🔥 Fogo — Ataque\n\nValores individuais definidos pelo administrador com base no nível do personagem."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "conjuracao-de-grilhoes",
+        "name": "Conjuração de Grilhões",
+        "traits": "",
+        "kind": "CONJURADOR",
+        "cost": "35 de mana, UMA AÇÃO",
+        "range": "DISTÂNCIA PADRÃO",
+        "duration": "3 turnos",
+        "limit": "",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Grilhões mágicos se prendem ao alvo, roubando 1 ação por turno enquanto drenam 1% da vida e mana máximas do conjurador para se manterem. Quebram imediatamente se o conjurador sofrer dano direto."
+      }
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { entryPath, publishedEntries, resolveRelations, sectionFor, sitePath, type Entry } from '../../lib/catalog';
+import { visualLayout } from '../../lib/visual-layout';
+import { Render } from '@puckeditor/core';
+import { anchorFor, puckConfig } from '../../puck/config';
+
+export async function getStaticPaths() {
+  const entries = await publishedEntries();
+  return entries.map((entry) => ({
+    params: { section: entry.data.section, slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+interface Props { entry: Entry; }
+const { entry } = Astro.props;
+const section = sectionFor(entry.data.section)!;
+const all = await publishedEntries();
+const explicitRelated = resolveRelations(all, entry.data.related);
+const children = all.filter((item) => item.data.section === entry.data.section &&
+  item.data.slug.startsWith(`${entry.data.slug}/`) &&
+  item.data.slug.split('/').length === entry.data.slug.split('/').length + 1);
+const related = [...new Map([...explicitRelated, ...children].map((item) => [item.id, item])).values()];
+const { Content, headings } = await render(entry);
+const layout = visualLayout(entry.data.section, entry.data.slug);
+const isModifier = (value: string) => /^[+−-]?\d+(?:[.,]\d+)?%\s+\S/.test(value.trim());
+const toc = headings.filter((heading) => (heading.depth === 2 || heading.depth === 3) && !isModifier(heading.text)).slice(0, 36);
+function markdownHeadings(body = '') {
+  return [...body.matchAll(/^#{1,6}\s+(.+?)\s*#*\s*$/gm)].map((match) => match[1].replace(/[*_`]/g, '').trim()).filter((title) => title && !isModifier(title));
+}
+function visualHeadings(blocks: any[]): { title: string; anchor: string }[] {
+  const result: { title: string; anchor: string }[] = [];
+  for (const block of blocks || []) {
+    const props = block.props || {};
+    const hasContent = (value: unknown) => String(value || '').trim().length > 0;
+    const title = ['Section', 'FeatureList', 'DataTable', 'Heading', 'ConditionCatalog', 'WeaponCatalog'].includes(block.type) ? props.title :
+      ['RaceVariation', 'Subrace', 'Ability', 'Locality'].includes(block.type) ? props.name : null;
+    const hasItems = ['FeatureList'].includes(block.type) ? props.items?.length :
+      block.type === 'DataTable' ? props.rows?.length :
+      block.type === 'ConditionCatalog' ? props.conditions?.length :
+      block.type === 'WeaponCatalog' ? props.weapons?.length : true;
+    if (title && hasItems && (block.type !== 'Section' || hasContent(props.body))) {
+      const normalized = String(title).trim();
+      if (normalized && !isModifier(normalized)) result.push({ title: normalized, anchor: anchorFor(normalized) });
+    }
+    if (block.type === 'ConditionCatalog') {
+      for (const category of [...new Set((props.conditions || []).map((condition: any) => String(condition.category || '').trim()).filter(Boolean))]) {
+        result.push({ title: category, anchor: anchorFor(category) });
+      }
+    }
+    if (['Markdown', 'RichText', 'Text', 'Section'].includes(block.type)) {
+      for (const heading of markdownHeadings(props.body || props.text)) result.push({ title: heading, anchor: anchorFor(heading) });
+    }
+    if (props.content && Array.isArray(props.content)) result.push(...visualHeadings(props.content));
+    if (props.left && Array.isArray(props.left)) result.push(...visualHeadings(props.left));
+    if (props.right && Array.isArray(props.right)) result.push(...visualHeadings(props.right));
+  }
+  const used = new Set<string>();
+  return result.filter((item) => {
+    if (used.has(item.anchor)) return false;
+    used.add(item.anchor);
+    return true;
+  }).slice(0, 36);
+}
+const visualToc = layout ? visualHeadings(layout.content) : [];
+const ancestors = entry.data.slug.split('/').slice(0, -1).map((_, index) =>
+  all.find((item) => item.data.section === entry.data.section &&
+    item.data.slug === entry.data.slug.split('/').slice(0, index + 1).join('/'))
+).filter((item): item is Entry => Boolean(item));
+const parent = ancestors.at(-1) || null;
+const backHref = parent ? entryPath(parent) : sitePath(`${section.slug}/`);
+const backTitle = parent ? parent.data.title : section.title;
+const visibleStats = entry.data.stats.filter((stat) => stat.label.trim() && stat.value.trim());
+const visibleFacts = entry.data.facts.filter((fact) => fact.label.trim() && fact.value.trim());
+const approvedCover = Boolean(entry.data.cover && entry.data.coverApproved);
+const previewCover = Boolean(entry.data.cover && entry.data.coverPreview && !entry.data.coverApproved);
+const emptyCoverPlaceholder = Boolean(!entry.data.cover && entry.data.coverPreview);
+const previewImageFormats = 'PNG · JPG · WebP · GIF · AVIF';
+---
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.summary}
+  section={entry.data.section}
+  crumbs={[
+    { title: section.title, href: sitePath(`${section.slug}/`) },
+    ...ancestors.map((item) => ({ title: item.data.title, href: entryPath(item) })),
+    { title: entry.data.title },
+  ]}
+>
+  <div class="entry-page">
+    <header class="entry-heading record-sheet">
+      <div class="record-main">
+        <span class="eyebrow">{entry.data.eyebrow || section.title}</span>
+        <div class="record-badges" aria-label="Marcadores desta ficha">
+          {(entry.data.badges.length ? entry.data.badges : [section.title]).map((badge) => <span class="record-badge">{badge}</span>)}
+        </div>
+        <h1>{entry.data.title}</h1>
+        {visibleStats.length > 0 && (
+          <dl class="record-metrics" aria-label="Atributos principais">
+            {visibleStats.map((stat) => (
+              <div class:list={['record-metric', `metric-${stat.tone}`]}>
+                <dt>{stat.label}</dt>
+                <dd>{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+        {entry.data.summary && (
+          <>
+            {entry.data.section === 'racas' && <span class="entry-description-label">Descrição da raça</span>}
+            {entry.data.section === 'origens' && <span class="entry-description-label">Descrição da origem</span>}
+            <p class="entry-lead">{entry.data.summary}</p>
+          </>
+        )}
+        {entry.data.status === 'referencia' && (
+          <div class="reference-notice"><Icon name="info" size={18}/><span>Conteúdo organizado a partir do material fornecido. Regras e nomenclaturas sujeitas à revisão editorial.</span></div>
+        )}
+      </div>
+      {(approvedCover || previewCover || emptyCoverPlaceholder) && (
+        <figure class:list={['record-portrait', { 'record-portrait-placeholder': emptyCoverPlaceholder }]}>
+          <div class="record-image-frame">
+            {(approvedCover || previewCover)
+              ? <img src={sitePath(entry.data.cover || '')} alt={entry.data.coverAlt || `Ilustração de ${entry.data.title}`} loading="lazy" />
+              : <div class="record-image-placeholder" aria-hidden="true"><Icon name="spark" size={28}/><span>Imagem pendente</span></div>}
+          </div>
+          {previewCover && <figcaption>Prévia temporária · Aguardando aprovação</figcaption>}
+          {emptyCoverPlaceholder && <figcaption>Espaço reservado · {previewImageFormats}</figcaption>}
+        </figure>
+      )}
+    </header>
+
+    <div class="entry-layout">
+      <article class="entry-article">
+        <div class="prose visual-page">{layout ? <Render config={puckConfig} data={layout}/> : <Content/>}</div>
+      </article>
+
+      <aside class="entry-aside" aria-label="Resumo e navegação desta ficha">
+        {(visibleFacts.length > 0 || section.fields?.some((field) => entry.data.customFields?.[field.key])) && <div class="aside-panel">
+            <div class="aside-heading"><Icon name="book" size={18}/><strong>Registro</strong></div>
+            {visibleFacts.map((fact) => (
+              <div class="fact-row"><span>{fact.label}</span><strong>{fact.value}</strong></div>
+            ))}
+            {section.fields?.map((field) => {
+              const value = entry.data.customFields?.[field.key];
+              return value ? <div class="fact-row"><span>{field.label}</span><strong>{String(value)}</strong></div> : null;
+            })}
+            <div class="fact-row"><span>Seção</span><a href={sitePath(`${section.slug}/`)}>{section.title}</a></div>
+          </div>}
+        {!layout && toc.length > 0 && <div class="aside-panel toc-panel">
+          <div class="aside-heading"><Icon name="bookmark" size={18}/><strong>Nesta página</strong></div>
+          <nav aria-label="Tópicos desta página">{toc.map((heading) => <a href={`#${heading.slug}`}>{heading.text}</a>)}</nav>
+        </div>}
+        {layout && visualToc.length > 0 && <div class="aside-panel toc-panel">
+          <div class="aside-heading"><Icon name="bookmark" size={18}/><strong>Nesta página</strong></div>
+          <nav aria-label="Tópicos desta ficha">{visualToc.map((item) => <a href={`#${item.anchor}`}>{item.title}</a>)}</nav>
+        </div>}
+      </aside>
+    </div>
+
+    {related.length > 0 && (
+      <section class="related-section">
+        <div class="section-heading-row">
+          <div><h2>Registros relacionados</h2></div>
+        </div>
+        <div class="entry-grid related-grid">{related.map((item) => <EntryCard entry={item}/>)}</div>
+      </section>
+    )}
+    <div class="entry-return"><a href={backHref}><Icon name="arrow" size={17}/> Voltar a {backTitle}</a></div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,54 @@
+{
+  "root": { "props": {} },
+  "content": [
+    { "type": "Heading", "props": { "title": "Opções de Habilidades", "level": "h2" } },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "mortalha-dos-justos",
+        "name": "Mortalha dos Justos",
+        "traits": "",
+        "kind": "GUERREIRO",
+        "cost": "TRÊS AÇÕES",
+        "range": "DISTÂNCIA PADRÃO",
+        "duration": "",
+        "limit": "1 uso por combate",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "A arma é fincada no solo e cinco réplicas espectrais irrompem da terra em pontos diferentes ao redor do alvo. Cada réplica realiza sua própria rolagem de acerto, causando dano com ESCALA 10 no seu maior status como dano espiritual."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "muralha-de-jaco",
+        "name": "Muralha de Jacó",
+        "traits": "",
+        "kind": "GUERREIRO",
+        "cost": "UMA REAÇÃO",
+        "range": "DISTÂNCIA PADRÃO",
+        "duration": "2 turnos",
+        "limit": "1 uso por combate",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Um campo translúcido e pesado envolve até 2 aliados escolhidos, absorvendo dano equivalente a 100% da vida máxima do usuário."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "efige-da-legiao",
+        "name": "Efíge da Legião",
+        "traits": "",
+        "kind": "GUERREIRO",
+        "cost": "UMA REAÇÃO",
+        "range": "DISTÂNCIA PADRÃO",
+        "duration": "3 turnos",
+        "limit": "1 uso por combate",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Um brado que ecoa além do físico — o usuário e até 2 aliados têm todas as estatísticas aumentadas em 15% + 1% a cada 10 de Ego, erguendo também o efeito [Moral] sobre todos os afetados."
+      }
+    }
+  ]
+}

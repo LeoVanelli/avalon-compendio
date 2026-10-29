@@ -1,0 +1,6 @@
+[
+  { "slug": "racas", "title": "Raças", "subtitle": "Povos e linhagens", "description": "Conheça as raças e variações do Nexus.", "icon": "crest", "template": "racas", "index": 1 },
+  { "slug": "origens", "title": "Origens", "subtitle": "Caminhos e poderes", "description": "Explore Artefatos, Sobrenaturais, Mundanos e Tecnologia.", "icon": "compass", "template": "origens", "index": 2 },
+  { "slug": "regioes", "title": "Regiões", "subtitle": "Territórios do Nexus", "description": "Percorra os territórios e descubra suas localidades.", "icon": "map", "template": "regioes", "index": 3 },
+  { "slug": "sistemas-basicos", "title": "Sistemas Básicos", "subtitle": "Regras e mecânicas", "description": "Consulte os sistemas e regras de Avalon.", "icon": "clock", "template": "sistemas-basicos", "index": 4 }
+]

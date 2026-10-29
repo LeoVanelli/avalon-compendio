@@ -1,0 +1,185 @@
+{
+  "root": {
+    "props": {}
+  },
+  "content": [
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "introducao-combate",
+        "body": "\"Nesse texto apresentaremos o módulo básico de combate de Avalon, explicando certos termos, ações e limites de um combate no RPG.\""
+      }
+    },
+    {
+      "type": "Section",
+      "props": {
+        "id": "section-acoes-e-reacoes",
+        "title": "Ações e Reações",
+        "body": "<p>Um personagem possui em base o total de <strong>3 AÇÕES</strong> e <strong>1 REAÇÃO</strong> por turno, com esse limite sendo expandido apenas por certos efeitos de status, habilidades limitadas ou ao se melhorar o Atributo de <strong>DESTREZA</strong> (Consulte o spam de atributos).</p><p>Não há limitações sobre como se usar essas 3 ações, desde que se respeite o limite estabelecido pelo custo de ações de sua Habilidade. Abaixo segue uma lista com algumas ações básicas de combate que não necessitam de perícias para serem executadas, bem como seu custo:</p>"
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "acao-ataque-basico",
+        "name": "Ataque Básico",
+        "traits": "combate, básico",
+        "kind": "AÇÃO BÁSICA",
+        "cost": "UMA AÇÃO",
+        "range": "",
+        "duration": "",
+        "limit": "",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Executa um ataque básico **[CORPO-A-CORPO]**, seguindo a ESCALA padrão do atributo da arma."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "acao-defender",
+        "name": "Defender",
+        "traits": "combate, básico",
+        "kind": "AÇÃO BÁSICA",
+        "cost": "1 a ??? AÇÕES",
+        "range": "",
+        "duration": "",
+        "limit": "",
+        "cooldown": "",
+        "requirements": "Você possui um escudo, capa, faixas ou defesa equivalente.",
+        "effect": "Levante sua proteção e obtenha **+1 de CA** até o fim do seu turno para cada ação que você usou para se defender, some esse bônus a qualquer bônus de item que seu escudo ou capa tiver."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "acao-analisar",
+        "name": "Analisar",
+        "traits": "combate, básico",
+        "kind": "AÇÃO BÁSICA",
+        "cost": "1 a ??? AÇÕES",
+        "range": "",
+        "duration": "",
+        "limit": "",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Para por um momento e analisa um alvo a qual esteja vendo, obtendo **+1 na próxima rolagem de ataque** direcionada àquele alvo, aumente esse bônus em +1 para cada ação que você usou para analisar o alvo."
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-modificadores-ca-e-dano",
+        "body": "## Modificadores, CA e Dano\n\nModificadores se referem aos bônus aditivos em rolagens (+1). Toda ação no RPG tem a interferência direta de algum atributo, sendo assim aumentar um atributo inevitavelmente aumentará alguma rolagem sua, com você **recebendo um bônus de +1 em suas rolagens com um atributo a cada 10 pontos investidos nele, incluindo perícias**.\n\n**CA** ou **CLASSE DE ARMADURA** é o valor que um atacante necessita alcançar no D20 para acertar seu golpe, sua CA é igual a **10 + [Nível] + [Mod. de Des] + [Bônus de pericia de Armadura] + [Bônus de pericia de Escudo/Capa]**.\n\nTodo DANO no RPG é ligado a uma **ESCALA**, um número determinado pela sua arma ou habilidade que determina quanto dano fixo seu ataque terá:"
+      }
+    },
+    {
+      "type": "DataTable",
+      "props": {
+        "id": "tabela-escalas-dano",
+        "title": "Escalas de Dano",
+        "rows": [
+          {
+            "name": "Armas Corpo-a-Corpo Simples (Força)",
+            "value": "ESCALA 3 → 3 × FOR = DANO FIXO"
+          },
+          {
+            "name": "Armas Corpo-a-Corpo e Distância Simples (Destreza)",
+            "value": "ESCALA 2 → 2 × DES = DANO FIXO"
+          },
+          {
+            "name": "Ataques Mágicos Simples (Mag, Ego ou Sor)",
+            "value": "ESCALA 2 → 2 × MAG/EGO/SOR = DANO FIXO. Requerem treinamento em um tipo de magia e um catalisador mágico."
+          },
+          {
+            "name": "Ataques Desarmados (Força ou Destreza)",
+            "value": "ESCALA 2 quando treinados, ESCALA 1 quando destreinados. Aumente a ESCALA em 1 a cada grau de perícia."
+          },
+          {
+            "name": "Armas de Fogo",
+            "value": "ESCALA variável."
+          },
+          {
+            "name": "Sangue Vorpal de Zumbi (Sorte)",
+            "value": "ESCALA 3 → 3 × SOR = DANO FIXO"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-e-o-poder",
+        "body": "## E o PODER?\n\nPODER se trata de dano fixo aplicado a habilidades puramente focadas nisso, a escala não afeta a quantidade de PODER. A conta de dano é executada pelo NARRADOR, apenas mantenha controle sobre seu dano fixo e ESCALA para facilitar a conta dele."
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-movimentacao-e-alcance",
+        "body": "## Movimentação e Alcance\n\nPor padrão, todo personagem em um turno pode se mover em **[DESLOCAMENTO PADRÃO]** usando o atributo de DESTREZA (Ou MAG se estiver sob efeito de voo mágico e similares) sem gastar ação alguma, se mover uma distância maior que seu deslocamento gastará **UMA AÇÃO** investida para se mover até o limite do seu deslocamento mais uma vez. Seu deslocamento não aumentará até que alguma habilidade ou característica diga o contrário.\n\nToda habilidade possui um alcance especificado em sua descrição, bem como o atributo usado para definir tal alcance. Alcance, ao contrário de Deslocamento, não pode ser aumentado ao se gastar mais ações, a menos que alguma habilidade sua diga o contrário.\n\nUm personagem com 1 de destreza não é exatamente fraco ou muito lento, mas essa será a distância que ele poderá cobrir sem colocar muito esforço."
+      }
+    },
+    {
+      "type": "DataTable",
+      "props": {
+        "id": "tabela-distancias",
+        "title": "Distâncias",
+        "rows": [
+          {
+            "name": "[DISTÂNCIA PESSOAL]",
+            "value": "Limitado ao corpo do personagem"
+          },
+          {
+            "name": "[DISTÂNCIA CORPO-A-CORPO ou TOQUE]",
+            "value": "Ao lado de outro ser, pelo menos o seu braço de distância"
+          },
+          {
+            "name": "[DISTÂNCIA PADRÃO]",
+            "value": "Atributo × 2 metros"
+          },
+          {
+            "name": "[DISTÂNCIA MÉDIA]",
+            "value": "Atributo × 3"
+          },
+          {
+            "name": "[DISTÂNCIA GRANDE]",
+            "value": "Atributo × 4"
+          },
+          {
+            "name": "[DISTÂNCIA EXTREMA]",
+            "value": "Atributo × 5"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-pericias-de-combate",
+        "body": "## Perícias de Combate\n\nAlgumas perícias envolvem o coração do combate, treiná-las fornece bônus aditivos diretos às suas rolagens usadas em uma luta:\n\n#### Perícias de Ataque\n\n- ⚔️ **Armas Convencionais** (For ou Des) — A capacidade de usar as armas do velho mundo, nunca sai de moda. Influencia modificadores de ataque.\n- 🔫 **Armas Balísticas** (For ou Des) — A capacidade de usar as armas de fogo. Influencia modificadores de ataque.\n- 🔩 **Armas Tecno-mágicas** (For ou Des) — A capacidade de usar as armas tecno-mágicas criadas pelas corporações. Influencia modificadores de ataque.\n- 👊 **Ataques Desarmados** (For ou Des) — A capacidade de usar o seu corpo para atacar. Influencia modificadores de ataque.\n\n#### Perícias de Defesa\n\n- 🩻 **Armadura** (Con ou For) — A capacidade de usar armaduras dos mais diversos tipos. Influencia sua CA.\n- 🛡️ **Escudo ou Esquiva** (Con, For ou Des) — A capacidade de usar um escudo, capa ou faixas para desviar ou se defender de ataques. Influencia sua CA.\n\n#### Perícias de Magia\n\n- 🌀 **Magia Arcana** (Mag ou Ego) — Influencia modificadores de ataque e CDs de Magia.\n- 🔥 **Magia Elemental** (Mag ou Ego) — Influencia modificadores de ataque e CDs de Magia.\n- 🌓 **Magia Divina/Profana** (Mag ou Sor) — Influencia modificadores de ataque e CDs de Magia.\n- 🫯 **Magia Caótica/Primal** (Mag ou Sor) — Influencia modificadores de ataque e CDs de Magia.\n\n#### Perícias de Resistência\n\n- 🧠 **Mente** (Ego ou Mag) — Influencia modificadores de resistência para efeitos mentais e proezas mentais em combate.\n- 💪 **Corpo** (Con ou For) — Influencia modificadores de resistência para efeitos físicos e proezas físicas em combate.\n- 🧏 **Aura** (Ego ou Mag) — Influencia modificadores de resistência para efeitos sociais ou para executar certas ações tais como intimidar um inimigo, causar boa impressão e etc."
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-equipamentos-basicos-de-combate",
+        "body": "## Equipamentos Básicos de Combate\n\nEsse texto não entrará a fundo nas especificidades de cada arma, apenas as separará por categorias. Os equipamentos básicos aqui listados podem ser escolhidos por qualquer personagem em sua criação."
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-categorias-de-equipamento",
+        "body": "## Categorias de Equipamento\n\n### Armas Convencionais\n\nEspadas, maças, arcos etc. Qualquer arma branca comum. Armas convencionais iniciais por padrão têm **DANO FÍSICO**.\n\n### Armas Balísticas\n\nPistolas, escopetas, rifles de caça etc. Qualquer arma de fogo básica. Armas balísticas iniciais por padrão têm **DANO FÍSICO**.\n\n### Catalisadores Mágicos\n\nVarinhas, cajados, símbolos sagrados etc. Possuem **DANO MÁGICO** por padrão e utilizam a perícia mágica equivalente para modificadores de ataque. Possui ataque com **[ALCANCE PADRÃO]**.\n\n### Escudo, Capa e Faixas\n\nItens usados para defesa, necessários para se utilizar dos benefícios da perícia de **ESCUDO/ESQUIVA**.\n\n### Armadura\n\nQualquer peça de armadura básica. Necessária para se utilizar dos benefícios da perícia de **ARMADURA**."
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-mais-em-breve",
+        "body": "## Mais em breve!\n\n*(Mais no próximo módulo)*"
+      }
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "root": {
+    "props": {}
+  },
+  "content": [
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "introducao-armas",
+        "body": "### ARMAS CONVENCIONAIS\n\n\"Este tipo de armas são de maior abundância no mundo, principalmente na era passada e tem seu valor nas eras atuais graças a versatilidade e facilidade de sua fabricação, dando a ela um status de ordinário em um bom sentido. Graças a forma como são criadas um pequeno traço místico se mesclou a sua existência, aplicando efeitos extras quando tem seu ápice, sendo este um *CRÍTICO*.\""
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-efeitos-de-critico",
+        "body": "## Efeitos de Crítico\n\nCada tipo de arma convencional possui um efeito único ativado ao acertar um *CRÍTICO*."
+      }
+    },
+    {
+      "type": "WeaponCatalog",
+      "props": {
+        "id": "catalogo-armas-convencionais",
+        "title": "Armas Convencionais",
+        "weapons": [
+          {
+            "name": "Arco e Flecha",
+            "category": "Arma convencional",
+            "traits": "convencional, distância",
+            "description": "",
+            "scale": "",
+            "attribute": "",
+            "hands": "",
+            "range": "",
+            "reload": "",
+            "ammunition": "",
+            "critical": "Garante um bônus de 5% de dano crítico."
+          },
+          {
+            "name": "Adaga",
+            "category": "Arma convencional",
+            "traits": "convencional, corpo-a-corpo",
+            "description": "",
+            "scale": "",
+            "attribute": "",
+            "hands": "",
+            "range": "",
+            "reload": "",
+            "ammunition": "",
+            "critical": "Aplica **[Hemorragia]** diretamente."
+          },
+          {
+            "name": "Espada Média",
+            "category": "Arma convencional",
+            "traits": "convencional, corpo-a-corpo",
+            "description": "",
+            "scale": "",
+            "attribute": "",
+            "hands": "",
+            "range": "",
+            "reload": "",
+            "ammunition": "",
+            "critical": "Concede um bônus de **Des (+5)** no próximo golpe."
+          },
+          {
+            "name": "Espada Longa",
+            "category": "Arma convencional",
+            "traits": "convencional, corpo-a-corpo",
+            "description": "",
+            "scale": "",
+            "attribute": "",
+            "hands": "",
+            "range": "",
+            "reload": "",
+            "ammunition": "",
+            "critical": "Entra em um estado onde o embalo do movimento garante um bônus de **For (+2)** acumulado por críticos acertados."
+          },
+          {
+            "name": "Espadão",
+            "category": "Arma convencional",
+            "traits": "convencional, corpo-a-corpo",
+            "description": "",
+            "scale": "",
+            "attribute": "",
+            "hands": "",
+            "range": "",
+            "reload": "",
+            "ammunition": "",
+            "critical": "Caso o alvo bloqueie o golpe ele é desarmado com o impacto."
+          },
+          {
+            "name": "Martelo",
+            "category": "Arma convencional",
+            "traits": "convencional, corpo-a-corpo",
+            "description": "",
+            "scale": "",
+            "attribute": "",
+            "hands": "",
+            "range": "",
+            "reload": "",
+            "ammunition": "",
+            "critical": "Deixa o alvo no estado **[Atordoado]**."
+          },
+          {
+            "name": "Lança",
+            "category": "Arma convencional",
+            "traits": "convencional, corpo-a-corpo",
+            "description": "",
+            "scale": "",
+            "attribute": "",
+            "hands": "",
+            "range": "",
+            "reload": "",
+            "ammunition": "",
+            "critical": "Ignora 10% da Defesa total do alvo."
+          },
+          {
+            "name": "Katana",
+            "category": "Arma convencional",
+            "traits": "convencional, corpo-a-corpo",
+            "description": "",
+            "scale": "",
+            "attribute": "",
+            "hands": "",
+            "range": "",
+            "reload": "",
+            "ammunition": "",
+            "critical": "Em vez de ter acerto crítico este tipo de arma possui **[Hit]**. Ao acertar um crítico, em vez de aumentar o dano o portador irá golpear novamente causando metade do dano original. Caso consiga um crítico neste **[Hit]** irá bater novamente, mantendo o dano cortado pela metade, podendo refazer isso até **5 vezes**."
+          }
+        ]
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-area-de-defesa",
+        "body": "## Área de Defesa\n\nDiferente de *crítico*, estas armas possuem efeitos quando bloqueiam um golpe.\n\n### Broquel\n\nPermite um **[Parry]** fazendo com que efeitos de contato não se apliquem caso consiga se defender adequadamente.\n\n### Escudo\n\nAumenta a defesa durante o golpe em **10%**.\n\n### Torre\n\nDano em área é parado pelo escudo caso seja o primeiro a ser atingido e os aliados estejam atrás de você.\n\n### ARMAS BALÍSTICAS\n\n\"Armas Balísticas requerem **[MUNIÇÃO]** e têm que ser recarregadas ao custo de **[AÇÕES]** após cada tiro bem sucedido, variando do tipo de arma. Todo personagem começa missões oficiais da Guilda com munição o suficiente para 3 cenas.\""
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-regras-gerais",
+        "body": "## Regras Gerais\n\n- Toda arma Balística possui o traço **[BALÍSTICA]**.\n- Armas com o traço **[EXPLOSIVA]** possuem uma área de explosão omnidirecional igual a **1/3 de seu alcance**, sendo realizado um teste de ataque para cada criatura no alcance dessa explosão.\n- Armas Avançadas só podem ser manuseadas por personagens treinados em armas balísticas.\n- Armas com o traço **[ESPECIALISTA]** requerem um cuidado ainda maior, com um teste falho de perícia levando a um tiro não planejado em si mesmo."
+      }
+    },
+    {
+      "type": "WeaponCatalog",
+      "props": {
+        "id": "catalogo-armas-balisticas-simples",
+        "title": "Armas Balísticas Simples",
+        "weapons": [
+          {
+            "name": "Pistola",
+            "category": "Armas Balísticas Simples",
+            "traits": "balística, comum",
+            "description": "Uma pistola semi automática comum, amplamente comercializada.",
+            "scale": "2 em Des",
+            "attribute": "Des",
+            "hands": "1",
+            "range": "Médio",
+            "reload": "0",
+            "ammunition": "1 crédito por Cena",
+            "critical": ""
+          },
+          {
+            "name": "Revólver",
+            "category": "Armas Balísticas Simples",
+            "traits": "balística, comum",
+            "description": "Um revólver com um tambor para 6 balas, você provavelmente vai gastar todo o tambor antes de conseguir causar dano com ele.",
+            "scale": "2 em Des ou For, ou 4 com duas mãos",
+            "attribute": "Des ou For",
+            "hands": "1 ou 2",
+            "range": "Padrão",
+            "reload": "1 ação",
+            "ammunition": "10 créditos por Cena",
+            "critical": ""
+          },
+          {
+            "name": "Rifle de Assalto",
+            "category": "Armas Balísticas Simples",
+            "traits": "balística, comum",
+            "description": "A banalização de uma arma que já foi o pináculo da tecnologia, ainda muito eficiente.",
+            "scale": "4 em For",
+            "attribute": "For",
+            "hands": "2",
+            "range": "Padrão",
+            "reload": "1 ação",
+            "ammunition": "50 créditos por Cena",
+            "critical": ""
+          },
+          {
+            "name": "Espingarda",
+            "category": "Armas Balísticas Simples",
+            "traits": "balística, comum",
+            "description": "Uma espingarda de dois canos, exige uma recarga lenta mas maneira.",
+            "scale": "5 em For",
+            "attribute": "For",
+            "hands": "2",
+            "range": "9m",
+            "reload": "2 ações",
+            "ammunition": "50 créditos por Cena",
+            "critical": ""
+          },
+          {
+            "name": "Rifle de Caça",
+            "category": "Armas Balísticas Simples",
+            "traits": "balística, comum",
+            "description": "Um rifle feito para caçar animais comuns, uma boa alternativa para Franco atiradores POBRES!",
+            "scale": "3 em Des",
+            "attribute": "Des",
+            "hands": "2",
+            "range": "Grande",
+            "reload": "1 ação",
+            "ammunition": "20 créditos por Cena",
+            "critical": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "WeaponCatalog",
+      "props": {
+        "id": "catalogo-armas-balisticas-avancadas",
+        "title": "Armas Balísticas Avançadas",
+        "weapons": [
+          {
+            "name": "UZI",
+            "category": "Armas Balísticas Avançadas",
+            "traits": "balística, incomum",
+            "description": "Uma submetralhadora de mão, apreciada entre os Gângsters.",
+            "scale": "3 em Des",
+            "attribute": "Des",
+            "hands": "1",
+            "range": "18m",
+            "reload": "0 ação",
+            "ammunition": "70 créditos por Cena",
+            "critical": ""
+          },
+          {
+            "name": "Lança-Granada",
+            "category": "Armas Balísticas Avançadas",
+            "traits": "balística, incomum, explosivo",
+            "description": "Um dispositivo que dispara… GRANADAS!",
+            "scale": "10 em Des",
+            "attribute": "Des",
+            "hands": "2",
+            "range": "18m",
+            "reload": "3 ações",
+            "ammunition": "100 créditos por Cena",
+            "critical": ""
+          },
+          {
+            "name": "RPG",
+            "category": "Armas Balísticas Avançadas",
+            "traits": "balística, incomum, explosivo, especialista",
+            "description": "Ahn…. É um lança-foguetes!",
+            "scale": "20 em For",
+            "attribute": "For",
+            "hands": "2",
+            "range": "36m",
+            "reload": "1 cena",
+            "ammunition": "500 créditos por Cena",
+            "critical": ""
+          }
+        ]
+      }
+    }
+  ]
+}

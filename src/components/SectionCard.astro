@@ -1,0 +1,13 @@
+---
+import type { SectionSlug } from '../lib/catalog';
+import { sitePath } from '../lib/catalog';
+import Icon from './Icon.astro';
+interface Props { slug: SectionSlug; title: string; subtitle: string; icon: string; index: number; count: number; }
+const { slug, title, subtitle, icon, index, count } = Astro.props;
+---
+<a class="section-card" href={sitePath(`${slug}/`)}>
+  <div class="section-card-emblem"><Icon name={icon} size={26}/></div>
+  <h3>{title}</h3>
+  <p>{subtitle}</p>
+  <span class="section-card-link">{count} {count === 1 ? 'registro' : 'registros'} <Icon name="arrow" size={17} /></span>
+</a>

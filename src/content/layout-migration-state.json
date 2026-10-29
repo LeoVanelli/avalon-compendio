@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "pages": {
+    "racas/humanos": {
+      "status": "manual",
+      "reason": "Layout Puck pré-existente, sem marcador confiável de migração; preservado como manual.",
+      "layoutHash": "343bafd61de532f08bbaf1698e17e8871e901fd45fb7e666d77c29c10a81e33b",
+      "updatedAt": "2026-10-29T02:40:19.658Z"
+    },
+    "racas/bruxas": {
+      "status": "manual",
+      "reason": "Layout salvo pelo Editor Avalon.",
+      "layoutHash": "551b2c690ded3df60b62430d6d1c93c449cac4ca673fbfb4a594da8b992e99ed",
+      "updatedAt": "2026-10-29T03:43:41.568Z"
+    },
+    "regioes/avalon": {
+      "status": "automatic",
+      "converter": "regioes/avalon",
+      "migrationVersion": 3,
+      "layoutHash": "b94d3a8b9fe5ad50c5806796058b2e90dd4cf864d58d774a9e4a8555ed15e455",
+      "sourceHash": "dd3ea9abc096fbfd31cdf8db1068a65a4e513dc845df853e48a687f7b1621c8b",
+      "note": "Atualização segura do layout que continua marcado como automático.",
+      "updatedAt": "2026-10-29T02:46:40.881Z"
+    },
+    "sistemas-basicos/armas": {
+      "status": "automatic",
+      "converter": "sistemas-basicos/armas",
+      "migrationVersion": 3,
+      "layoutHash": "8ea9d0e091c8abfd3fdd40ee63a03323c2857b81beed6bc9c89fc2fa5003d50a",
+      "sourceHash": "9542f13586bb0e593876bb16ab668d3c4e0cbd834f3d1d504976c0ea05eca96c",
+      "note": "Atualização segura do layout que continua marcado como automático.",
+      "updatedAt": "2026-10-29T02:46:40.883Z"
+    },
+    "sistemas-basicos/combate": {
+      "status": "automatic",
+      "converter": "sistemas-basicos/combate",
+      "migrationVersion": 3,
+      "layoutHash": "5af9c964fc8e41b704e888b59f2ba7a67ddb7066bd4a83a21635a950b36ea048",
+      "sourceHash": "d0a7644669d3858a88c16dfb14d241649681dc8ab7617012a5e20a6017f5bd16",
+      "note": "Atualização segura do layout que continua marcado como automático.",
+      "updatedAt": "2026-10-29T02:46:40.885Z"
+    },
+    "sistemas-basicos/condicoes": {
+      "status": "automatic",
+      "converter": "sistemas-basicos/condicoes",
+      "migrationVersion": 3,
+      "layoutHash": "167bef682e25427cc4660eceafbecae8dac29055c9781d841f9b86267bcf0a62",
+      "sourceHash": "c987e7551f323554ab64bcafe07ac3eed6f0d4f2f9d361c219c9f4d4f695c4fc",
+      "note": "Atualização segura do layout que continua marcado como automático.",
+      "updatedAt": "2026-10-29T02:46:40.888Z"
+    },
+    "regioes/antory": {
+      "status": "automatic",
+      "converter": "regioes/antory",
+      "migrationVersion": 3,
+      "layoutHash": "544026a56ff9949334edab73eca94eb8c10e83ef32c31a058c9ebddfe46ffc01",
+      "sourceHash": "683b6ea695cdb68c1ef6e3a9626d4c96ba72c291e7dbb487a1c9e495d98b5097",
+      "note": "4 localidades transformadas em fichas; demais regras mantidas em Markdown.",
+      "updatedAt": "2026-10-29T02:58:28.789Z"
+    },
+    "regioes/terrarium": {
+      "status": "automatic",
+      "converter": "regioes/terrarium",
+      "migrationVersion": 3,
+      "layoutHash": "0e4ee7a2491a8a1de08905dbec836ac1be378a46a0d7e96d3af81ab7bae8efa9",
+      "sourceHash": "c280ccc36f5de9f04d21fc8489eae285e4507063f1fdb7922b6b8eebe94ec3af",
+      "note": "3 localidades transformadas em fichas; demais regras mantidas em Markdown.",
+      "updatedAt": "2026-10-29T02:58:28.792Z"
+    },
+    "regioes/the-great-divide": {
+      "status": "automatic",
+      "converter": "regioes/the-great-divide",
+      "migrationVersion": 3,
+      "layoutHash": "ee709ce60d8528bf880ea0fbeeaca01a5e8943b1e933b11b91c18397727121fc",
+      "sourceHash": "c53217f123ffdbf3fb0c7e2b8bcc055d6ac35830b7fc155d3df17d91c6bd73c8",
+      "note": "3 localidades transformadas em fichas; demais regras mantidas em Markdown.",
+      "updatedAt": "2026-10-29T02:58:28.794Z"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "root": { "props": {} },
+  "content": [
+    { "type": "Heading", "props": { "title": "Opções de Habilidades", "level": "h2" } },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "ecos-do-passado",
+        "name": "Ecos do Passado",
+        "traits": "",
+        "kind": "ANCESTRAL",
+        "cost": "UMA REAÇÃO",
+        "range": "",
+        "duration": "",
+        "limit": "1 uso por combate",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "O artefato pulsa e emite uma onda invisível que varre a região, mapeando tudo em (Magia + Destreza) ÷ 5 metros quadrados — inimigos, aliados e pontos de interesse têm suas informações expostas ao usuário. Reativando, o usuário mergulha na memória do lugar, vendo ecos do que aconteceu ali."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "rebobinar",
+        "name": "Rebobinar",
+        "traits": "",
+        "kind": "ANCESTRAL",
+        "cost": "UMA REAÇÃO",
+        "range": "DISTÂNCIA PADRÃO",
+        "duration": "",
+        "limit": "1 uso por combate",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "O artefato brilha em azul e envolve o alvo na mesma coloração — o tempo ao redor dele hesita, e o usuário puxa de volta qualquer ação dos últimos 3 turnos, como se ela nunca tivesse acontecido."
+      }
+    }
+  ]
+}

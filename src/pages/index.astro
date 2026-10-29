@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import SectionCard from '../components/SectionCard.astro';
+import EntryCard from '../components/EntryCard.astro';
+import { publishedEntries, sections, sitePath } from '../lib/catalog';
+import { homeLayout } from '../lib/visual-layout';
+import { Render } from '@puckeditor/core';
+import { puckConfig } from '../puck/config';
+const entries = await publishedEntries();
+const featuredSlugs = ['racas/humanos', 'origens/artefatos', 'regioes/avalon', 'sistemas-basicos/combate'];
+const featured = featuredSlugs
+  .map((reference) => entries.find((entry) => `${entry.data.section}/${entry.data.slug}` === reference))
+  .filter((entry) => Boolean(entry));
+const intro = homeLayout();
+---
+<BaseLayout>
+  <section class="home-hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <span class="eyebrow">BETA</span>
+      <h1 id="hero-title">Uma era de paz<br/>é sempre o <em> prelúdio do caos.</em></h1>
+      <p>Aqui você encontrará a maioria das coisas referentes ao Avalon. (em construção).</p>
+      <a href={sitePath('racas/')} class="hero-cta">Explorar o compêndio <Icon name="arrow" size={18}/></a>
+    </div>
+    <div class="observatory-mark" aria-hidden="true">
+      <div class="observatory-ring observatory-ring-outer"></div>
+      <div class="observatory-ring observatory-ring-middle"></div>
+      <div class="observatory-ring observatory-ring-inner"></div>
+      <div class="observatory-axis observatory-axis-x"></div>
+      <div class="observatory-axis observatory-axis-y"></div>
+      <div class="observatory-core">✦</div>
+    </div>
+  </section>
+
+  {intro && <section class="home-introduction prose visual-page" aria-label="Introdução de Avalon">
+    <Render config={puckConfig} data={intro}/>
+  </section>}
+
+  <section class="home-section" aria-labelledby="sections-heading">
+    <div class="section-heading-row">
+      <div>
+        <h2 id="sections-heading">Explore o Compêndio</h2>
+        <p>Explore os registros e caminhos do universo de Avalon.</p>
+      </div>
+    </div>
+    <div class="section-grid">
+      {sections.map((section) => (
+        <SectionCard {...section} count={entries.filter((entry) => entry.data.section === section.slug).length}/>
+      ))}
+    </div>
+  </section>
+
+  <section class="home-section featured-section" aria-labelledby="featured-heading">
+    <div class="section-heading-row">
+      <div>
+        <h2 id="featured-heading">Registros em destaque</h2>
+        <p>Comece pelos conteúdos enviados para o Compêndio.</p>
+      </div>
+    </div>
+    <div class="entry-grid">
+      {featured.map((entry) => entry && <EntryCard entry={entry}/>) }
+    </div>
+  </section>
+
+  <p class="home-footnote"><Icon name="info" size={17}/> Acervo organizado a partir dos HTMLs fornecidos. Os textos de regras permanecem sujeitos à revisão editorial.</p>
+</BaseLayout>

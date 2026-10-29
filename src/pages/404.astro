@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { sitePath } from '../lib/catalog';
+---
+<BaseLayout title="Registro não encontrado" description="Esta página não foi encontrada no Compêndio de Avalon.">
+  <div class="notfound">
+    <span class="notfound-number">404</span>
+    <Icon name="orbit" size={46}/>
+    <h1>Este registro se perdeu entre as eras.</h1>
+    <p>A página que você procura ainda não existe no Observatório, ou foi movida para outro acervo.</p>
+    <a class="primary-link" href={sitePath()}>Voltar ao início <Icon name="arrow" size={18}/></a>
+  </div>
+</BaseLayout>

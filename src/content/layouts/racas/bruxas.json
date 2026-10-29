@@ -1,0 +1,70 @@
+{
+  "root": {
+    "props": {}
+  },
+  "content": [
+    {
+      "type": "RaceVariation",
+      "props": {
+        "id": "variacao-hexe",
+        "name": "Hexe",
+        "classification": "",
+        "baseHp": "50",
+        "bonusPercent": "13%",
+        "bonusAttributes": "Mag, Ego e Sor",
+        "penaltyPercent": "13%",
+        "penaltyAttributes": "For, Con e Dex",
+        "description": "",
+        "content": []
+      }
+    },
+    {
+      "type": "Section",
+      "props": {
+        "id": "section-requisitos",
+        "title": "Requisitos",
+        "body": "<p>Passar na entrevista, mulher</p>"
+      }
+    },
+    {
+      "type": "Section",
+      "props": {
+        "id": "section-positivos",
+        "title": "Positivos",
+        "body": "<p>Hexes recebem de Drawkill <strong>3 TESOUROS</strong>:</p><ul><li>Um Chapéu de bruxa personalizado a sua escolha, ele tem a capacidade de armazenar uma quantidade infinita de itens e de conjurar passivamente uma magia de transmogrificação, <strong>permitindo que sua roupa e equipamentos tenham a aparência que você quiser</strong></li><li>Um Familiar aleatório, um pet da coleção pessoal de Drawkill com raridade e habilidades aleatórias. Drawkill pode se comunicar com você pelo familiar.</li><li>Uma vassoura, uma <strong>MONTARIA</strong> voadora que possui deslocamento <strong>MÉDIO</strong> baseado na sua magia em batalha, mas que alcança mach 1 em viagens.</li></ul><p>Hexes também recebem a seguinte técnica:</p>"
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "habilidade-hex-mania",
+        "name": "Hex Mania",
+        "traits": "hexe, sobrenatural, prioridade",
+        "kind": "TÉCNICA 1",
+        "cost": "10 de mana, UMA A TRÊS AÇÕES",
+        "range": "até 3 alvos que possa ver",
+        "duration": "2 TURNOS",
+        "limit": "",
+        "cooldown": "3 TURNOS",
+        "requirements": "",
+        "effect": "A Hexe aplica de 1 a 3 condições não ESPECIAIS em 1 a 3 alvos, sem necessidade de teste ou resistência,"
+      }
+    },
+    {
+      "type": "Section",
+      "props": {
+        "id": "section-negativos",
+        "title": "Negativos",
+        "body": "<ul><li>Hexes são particularmente vulneráveis a <strong>[ÁGUA], [DIVINO] e [PRATA]</strong>, receba a condição de <strong>[QUEIMAÇÃO ARCANA]</strong> todo turno que estiver em contato com uma dessas três coisas ou com efeitos que contenham uma delas.</li><li>Hexes são proibidas por contrato de usar origens de <strong>[TECNOLOGIA]</strong>, itens <strong>[TECNOLÓGICOS]</strong> e <strong>[ARMAS BALÍSTICAS]</strong>. &quot;Se quer uma pistola use uma varinha!&quot;</li></ul>"
+      }
+    },
+    {
+      "type": "Section",
+      "props": {
+        "id": "section-neutros",
+        "title": "Neutros",
+        "body": "<ul><li>Toda Hexe tem contato com Drawkill, podendo solicitar uma gama infinita de materiais que sobraram das infinitas aventuras dela, claro, isso custará <strong>CRÉDITOS</strong>, <strong>DCs</strong> ou exigirá uma <strong>autonarrada de tamanho variável</strong> a depender do seu pedido.</li></ul>"
+      }
+    }
+  ]
+}

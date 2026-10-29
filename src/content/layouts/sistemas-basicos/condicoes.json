@@ -1,0 +1,221 @@
+{
+  "root": {
+    "props": {}
+  },
+  "content": [
+    {
+      "type": "Heading",
+      "props": {
+        "id": "heading-tabela-de-condicoes",
+        "title": "Tabela de Condições",
+        "level": "h2"
+      }
+    },
+    {
+      "type": "Text",
+      "props": {
+        "id": "introducao-condicoes",
+        "text": "\"Condições são estados que afetam personagens durante o jogo, podendo ser positivos, negativos ou neutros. Conheça cada um deles.\""
+      }
+    },
+    {
+      "type": "ConditionCatalog",
+      "props": {
+        "id": "catalogo-condicoes",
+        "title": "Condições",
+        "conditions": [
+          {
+            "name": "[Abençoado]",
+            "category": "Positivas",
+            "description": "Concede resistência de 50% para debuffs aplicados por habilidades e ambiente."
+          },
+          {
+            "name": "[Adorável]",
+            "category": "Positivas",
+            "description": "Torna incapaz de ser alvo de ataques e habilidades de alvo único enquanto houver aliados próximos."
+          },
+          {
+            "name": "[Boa Sorte]",
+            "category": "Positivas",
+            "description": "Aumenta chance de efeito positivo em 20% e crítico em 25%."
+          },
+          {
+            "name": "[Bravura]",
+            "category": "Positivas",
+            "description": "Incapaz de receber danos críticos por ataques diretos. Aumenta a chance de ataques críticos em 25%."
+          },
+          {
+            "name": "[Dano Verdadeiro]",
+            "category": "Positivas",
+            "description": "Aplica dano diretamente no HP ignorando a defesa."
+          },
+          {
+            "name": "[Encantado]",
+            "category": "Positivas",
+            "description": "Primeiro dano não físico anulado. Danos de origem física são dobrados."
+          },
+          {
+            "name": "[Fúria]",
+            "category": "Positivas",
+            "description": "Atributos de Força e Destreza aumentam em 50%. Incapaz de defender. Pode ser removido por habilidades que causem [Molhado]."
+          },
+          {
+            "name": "[Invisível]",
+            "category": "Positivas",
+            "description": "Primeiro dano físico nulificado. Danos de origem não física são dobrados."
+          },
+          {
+            "name": "[Leve]",
+            "category": "Positivas",
+            "description": "Aumenta um tier de distância nas habilidades do alvo: [Distância Padrão] → [Distância Média]. O alvo é movido com extrema facilidade por qualquer habilidade, sendo lançado pela distância da skill. Aumenta dano sofrido por Ameno em 50% e reduz dano Geo em 50%."
+          },
+          {
+            "name": "[Moral]",
+            "category": "Positivas",
+            "description": "Caso acima de 50% de vida, se receber um dano que mataria, sobrevive com 1 de vida."
+          },
+          {
+            "name": "[Veloz]",
+            "category": "Positivas",
+            "description": "Permite uma ação extra."
+          },
+          {
+            "name": "[Alvo]",
+            "category": "Negativas",
+            "description": "Torna o alvo principal de ataques, ignorando todos e focando apenas no [Alvo]."
+          },
+          {
+            "name": "[Amaldiçoado]",
+            "category": "Negativas",
+            "description": "Danos de origem Sagrada são 20% mais efetivos."
+          },
+          {
+            "name": "[Amnésia]",
+            "category": "Negativas",
+            "description": "Bloqueia o uso de habilidades ativas."
+          },
+          {
+            "name": "[Apaixonado]",
+            "category": "Negativas",
+            "description": "Você está apaixonado, sendo incapaz de machucar o alvo de sua paixão. Apaixonado é rompido se a sua paixão ou aliados dela lhe causarem algum dano ou condição negativa."
+          },
+          {
+            "name": "[Apreciação]",
+            "category": "Negativas",
+            "description": "Perde uma ação apreciando algo de extrema beleza, geralmente quem causou este estado."
+          },
+          {
+            "name": "[Causticar]",
+            "category": "Negativas",
+            "description": "Versão mais forte de [Queimadura], removendo 5% do HP máximo por turno até 50%. Se curar do efeito gradativamente remove o debuff."
+          },
+          {
+            "name": "[Charme]",
+            "category": "Negativas",
+            "description": "Perde todos os turnos enquanto estiver sob Charme, perde resistência mental, sofrendo desvantagem nesses testes. O efeito é removido ao receber dano."
+          },
+          {
+            "name": "[Congelado]",
+            "category": "Negativas",
+            "description": "Fica paralisado dentro de uma camada de gelo, perdendo o turno. É solto por meios externos ou após dois turnos. Ataques que causem [Congelado] não acumulam, sendo necessário um turno após o descongelamento para congelar novamente."
+          },
+          {
+            "name": "[Dissipar]",
+            "category": "Negativas",
+            "description": "Remove todos os buffs aplicados no alvo."
+          },
+          {
+            "name": "[Envenenado]",
+            "category": "Negativas",
+            "description": "Remove 2,5% do HP máximo por turno até 25%. Removido por antídotos ou efeitos de cura equivalentes."
+          },
+          {
+            "name": "[Estupefato]",
+            "category": "Negativas",
+            "description": "O próximo dano recebido é configurado como dano crítico."
+          },
+          {
+            "name": "[Exausto]",
+            "category": "Negativas",
+            "description": "Reduz efeitos de Destreza e Força em 25%. Originado por algumas habilidades de dano natural."
+          },
+          {
+            "name": "[Frio]",
+            "category": "Negativas",
+            "description": "Aumenta em 50% dano de Cryo e Hydro. Reduz dano Biológico em 50%. O estado [Molhado] tem chance de congelar."
+          },
+          {
+            "name": "[Intoxicado]",
+            "category": "Negativas",
+            "description": "Versão mais forte de [Envenenado], removendo 5% do HP máximo por turno até 50%. Se curar do efeito gradativamente remove o debuff."
+          },
+          {
+            "name": "[Má Sorte]",
+            "category": "Negativas",
+            "description": "Diminui a chance de efeito positivo em 20% e reduz a chance de crítico em 25%."
+          },
+          {
+            "name": "[Molhado]",
+            "category": "Negativas",
+            "description": "Amplifica danos de origem Elétrica em 50%. Remove [Queimadura]."
+          },
+          {
+            "name": "[Paralisia]",
+            "category": "Negativas",
+            "description": "Perde o turno em que foi afetado, ficando imune a [Paralisia] no turno seguinte. Em questões de prioridade de cena, sempre agirá por último mesmo que curado no início do turno."
+          },
+          {
+            "name": "[Pesado]",
+            "category": "Negativas",
+            "description": "Reduz um tier de distância nas habilidades do alvo: [Distância Padrão] → [Distância Corpo-a-Corpo]. Não pode ser movido por habilidades de movimentação, com exceção de teleporte. Aumenta dano sofrido de Geo em 50% e reduz dano Ameno em 50%."
+          },
+          {
+            "name": "[Queimadura]",
+            "category": "Negativas",
+            "description": "Remove 2,5% do HP máximo por turno até 25%. Removida por [Molhado]."
+          },
+          {
+            "name": "[Ruptura]",
+            "category": "Negativas",
+            "description": "Dividida entre contadores e potência. A cada 1 de potência de Ruptura, causa 2 de Dano Verdadeiro no alvo atingido, removendo um de seus contadores. A quantidade de contadores determina quantas vezes o efeito pode ser aplicado."
+          },
+          {
+            "name": "[Sangramento]",
+            "category": "Negativas",
+            "description": "Remove 2,5% do HP máximo por turno até 25%. Removida ao se usar uma *AÇÃO* para estancar."
+          },
+          {
+            "name": "[Seco]",
+            "category": "Negativas",
+            "description": "Aumenta dano Pyro e Explosivo em 50%. Reduz dano Cryo e Eletro em 50%. Removido por [Molhado] ou ao receber qualquer dano."
+          },
+          {
+            "name": "[Sono]",
+            "category": "Negativas",
+            "description": "Você caiu no sono. O próximo ataque que receber sempre acertará, infligir dano em alguém dormindo o acorda, mas a CA até o final do seu próximo turno é reduzida em -3."
+          },
+          {
+            "name": "[Viral]",
+            "category": "Negativas",
+            "description": "Por turno causa 1% do HP como dano verdadeiro, cada turno aumenta o stack em +1 ampliando o dano com base na quantidade. Pode se espalhar."
+          },
+          {
+            "name": "[DECEPAR]",
+            "category": "Especiais",
+            "description": "Efeito de contato raro. Aplica um corte sobrenaturalmente limpo sobre a carne, decepando um membro do inimigo. Não tem efeito sobre metal ou energia, criaturas cobertas ou compostas por eles são imunes. Todo membro motor de um ser é diretamente ligado ao seu limite máximo de Destreza, com cada um dos 4 membros equivalendo a 25% da Destreza máxima. Uma criatura sem os 4 membros tem 0% de Destreza."
+          },
+          {
+            "name": "[Fadiga]",
+            "category": "Especiais",
+            "description": "Toda amplificação física e elemental é reduzida em 100% e todo gasto de Stamina é duplicado enquanto neste estado. Um personagem que atinge 10% de sua Stamina máxima ou menos sofre imediatamente de [Fadiga]. Raças sem Stamina são imunes a este efeito."
+          },
+          {
+            "name": "[Queimação Arcana]",
+            "category": "Especiais",
+            "description": "Toda amplificação mágica e elemental é reduzida em 100% e todo gasto de Mana é duplicado enquanto neste estado. Um personagem que atinge 10% de sua Mana máxima ou menos sofre imediatamente de [Queimação Arcana]. Raças sem Mana são imunes a este efeito."
+          }
+        ]
+      }
+    }
+  ]
+}

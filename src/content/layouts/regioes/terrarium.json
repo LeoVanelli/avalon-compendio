@@ -1,0 +1,83 @@
+{
+  "root": {
+    "props": {}
+  },
+  "content": [
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "introducao-regiao",
+        "body": "#### [Fragmento] [Flutuante] [Tripartido]\n\n\"Flutuando logo acima de um oceano infinito cheio de monstros, Terrarium é um fragmento de uma terra que já existia fora do fluxo do tempo padrão, simplesmente atraída às fronteiras do Nexus pela sua quebra. Ele é dividido em três regiões referentes às partes do Grande Cogumelo que cresce em meio a Terrarium.\""
+      }
+    },
+    {
+      "type": "Heading",
+      "props": {
+        "id": "heading-regioes-e-povos",
+        "title": "Regiões e Povos",
+        "level": "h2"
+      }
+    },
+    {
+      "type": "Locality",
+      "props": {
+        "id": "localidade-o-chao",
+        "name": "O Chão",
+        "description": "O ponto focal da maioria dos portais e da magia presente em Terrarium, uma terra de paisagens variadas com forte ligação com a magia. A figura máxima de poder no Chão atualmente é a **Deusa Angra**, líder da maior ordem druídica do Nexus.",
+        "image": "",
+        "imageAlt": "",
+        "imageApproved": false
+      }
+    },
+    {
+      "type": "Locality",
+      "props": {
+        "id": "localidade-o-caule",
+        "name": "O Caule",
+        "description": "A passagem entre o Chão e o Chapéu. Redes de elevadores e trens construídos pela **ALPHA CORP.** ligam as duas regiões, passando de maneira invasiva entre os labirintos de túneis do Caule. Muitas comunidades que desejavam se afastar da opressão do Chapéu ou simplesmente adquirir um lugar para chamar de seu se estabeleceram entre esses túneis, adotando um estilo de vida brutal mas estranhamente libertador. O Caule não possui uma liderança absoluta, com várias subculturas emergindo ao se adaptarem nos túneis.",
+        "image": "",
+        "imageAlt": "",
+        "imageApproved": false
+      }
+    },
+    {
+      "type": "Locality",
+      "props": {
+        "id": "localidade-o-chapeu",
+        "name": "O Chapéu",
+        "description": "Tecnologicamente a área mais avançada do Nexus, consistindo de uma cidade com prédios com mais de **1km de altura** e áreas periféricas tóxicas. Embora exija um alto padrão, muitos tentam obter uma vida mais fácil no Chapéu por conta da facilidade em chegar à região, principalmente pela política de negócios abertos. A liderança da região pertence à **Lux. S.A**, o grupo dono de empresas como a Alpha Corp., Queenies entre tantas outras.",
+        "image": "",
+        "imageAlt": "",
+        "imageApproved": false
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-racas-e-origens",
+        "body": "## Raças e Origens\n\n**O Chão:** Variedade imensa, praticamente qualquer raça e origem. \n **O Caule:** Raças artificiais são mais raras, origens tecnológicas praticamente inexistentes. \n **O Chapéu:** Maioria humana, com Cogs e Construtos presentes. Artefatos e Mundanos são raros."
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-nivel-tecnologico-e-magico",
+        "body": "## Nível Tecnológico e Mágico\n\n**O Chão:** Alta Magia com tecnologia análoga a fantasia medieval \n **O Caule:** Alta Magia com Tecnomagia baseada em organismos vivos \n **O Chapéu:** Alta Magia com tecnologia análoga a Cyberpunk e Steampunk"
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-pontos-de-interesse",
+        "body": "## Pontos de Interesse\n\n- A Grande Selva *(Chão)* * Santuário de Angra\n- O Grande Deserto *(Chão)* * Coliseu de Marisa\n- Estação Central *(Caule)* * C.C.C (Centro de Contenção do Caule)\n- A Torre Heavens *(Chapéu)*"
+      }
+    },
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "secao-bonus-de-origem-terrarium",
+        "body": "## Bônus de Origem — Terrarium\n\n**Chão — Minhas Raízes** *(Passiva)* \n Angra forneceu a esta terra sua graça divina, o reconhecimento de suas raízes. Originários do Chão têm direito a uma **Habilidade Extra** ligada à sua **RAÇA**, à parte de sua Origem. Sua ligação com sua raça se torna ainda mais íntima, recebendo **10% de desconto** ao negociar com seres de sua raça.\n\n**Caule — Barata** *(Passiva)* \n A vida no Caule é BRUTAL, apenas muito resíduo tóxico e magia duvidosa criariam seres tão resilientes quanto seus habitantes. Habitantes do Caule podem segurar a respiração por até **1 hora** e recebem **+50%** ao receberem materiais de monstros ou feras.\n\n**Chapéu — Condição Financeira Estável** *(Passiva)* \n A Lux. S.A de algum modo firmou um acordo com todos os seres existentes para garantir que até o mais DEPLORÁVEL dos habitantes do Chapéu tenha condições de se manter na cidade. Você inicia com **um item a mais** e recebe **+10%** toda vez que receber dinheiro (As pessoas são obrigadas a pagar)."
+      }
+    }
+  ]
+}

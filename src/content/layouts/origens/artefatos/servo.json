@@ -1,0 +1,38 @@
+{
+  "root": { "props": {} },
+  "content": [
+    { "type": "Heading", "props": { "title": "Opções de Habilidades", "level": "h2" } },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "deidade-antiga",
+        "name": "Deidade Antiga",
+        "traits": "",
+        "kind": "SERVO",
+        "cost": "DUAS AÇÕES",
+        "range": "DISTÂNCIA PADRÃO",
+        "duration": "",
+        "limit": "1 uso por combate",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Energia ancestral se acumula no campo até colapsar em uma explosão mágica massiva causando 65 de PODER + 1% de dano mágico por ponto de Ego. O usuário pode sacrificar mana adicional para ampliar: cada 5% de Mana extra expande o raio em 1 metro e aumenta o dano em +2%."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "veu-antigo",
+        "name": "Véu Antigo",
+        "traits": "",
+        "kind": "SERVO",
+        "cost": "UMA AÇÃO",
+        "range": "",
+        "duration": "3 turnos",
+        "limit": "1 uso por combate",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Uma divindade do antigo mundo se manifesta através do artefato — quanto maior o grau da entidade invocada, mais devastadora sua presença no mundo físico."
+      }
+    }
+  ]
+}

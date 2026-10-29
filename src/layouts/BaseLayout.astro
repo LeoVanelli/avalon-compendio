@@ -1,0 +1,119 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { entryPath, publishedEntries, sectionFor, sections, sitePath } from '../lib/catalog';
+
+interface Props {
+  title?: string;
+  description?: string;
+  section?: string;
+  crumbs?: { title: string; href?: string }[];
+}
+const {
+  title = 'Beta',
+  description = 'Explore raças, origens, regiões e sistemas básicos do universo de Avalon.',
+  section = '',
+  crumbs = [],
+} = Astro.props;
+const activeSection = sectionFor(section);
+const entries = await publishedEntries();
+const searchData = entries.map((entry) => ({
+  title: entry.data.title,
+  summary: entry.data.summary,
+  tags: entry.data.tags,
+  searchTerms: entry.data.searchTerms,
+  section: sectionFor(entry.data.section)?.title,
+  href: entryPath(entry),
+}));
+const json = JSON.stringify(searchData).replace(/</g, '\\u003c');
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#070D1A"/>
+    <meta name="description" content={description}/>
+    <link rel="canonical" href={canonical}/>
+    <link rel="icon" type="image/svg+xml" href={sitePath('favicon.svg')}/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <title>{title === 'Beta' ? 'Avalon — Beta' : `${title} · Avalon`}</title>
+  </head>
+  <body>
+    <div class="mobile-backdrop" data-close-menu></div>
+    <div class="site-shell">
+      <aside class="sidebar" id="site-sidebar" aria-label="Navegação do compêndio">
+        <a class="brand brand-sidebar" href={sitePath()}>
+          <span class="brand-seal"><Icon name="orbit" size={27}/></span>
+          <span class="brand-wordmark"><strong>AVALON</strong><small>Beta</small></span>
+        </a>
+        <button class="sidebar-close" type="button" data-close-menu aria-label="Fechar menu"><Icon name="close" size={20}/></button>
+        <div class="sidebar-scroll">
+          <p class="sidebar-label">Navegação</p>
+          <nav class="side-nav" aria-label="Seções">
+            <a href={sitePath()} class:list={['side-link', { active: !activeSection }]} aria-current={!activeSection ? 'page' : undefined}>
+              <Icon name="orbit" size={19}/><span>Início</span>
+            </a>
+            {sections.map((item) => (
+              <a href={sitePath(`${item.slug}/`)} class:list={['side-link', { active: activeSection?.slug === item.slug }]} aria-current={activeSection?.slug === item.slug ? 'page' : undefined}>
+                <Icon name={item.icon} size={19}/><span>{item.title}</span><Icon name="chevron" size={14} class="side-arrow"/>
+              </a>
+            ))}
+          </nav>
+          <div class="sidebar-note"><Icon name="spark" size={20}/><p>Compêndio</p></div>
+        </div>
+        <div class="sidebar-bottom"><span>✧</span> ARQUIVO DE AVALON <span>✧</span></div>
+      </aside>
+      <div class="main-column">
+        <header class="topbar">
+          <div class="topbar-leading">
+            <button class="icon-button sidebar-toggle" type="button" data-toggle-menu aria-label="Abrir menu" aria-controls="site-sidebar" aria-expanded="false">
+              <span data-menu-icon-open><Icon name="menu" size={22}/></span>
+              <span data-menu-icon-close hidden><Icon name="close" size={22}/></span>
+            </button>
+            <a class="topbar-brand" href={sitePath()}>AVALON <span>✦</span> Beta</a>
+          </div>
+          <div class="topbar-actions">
+            <button class="search-button" type="button" data-open-search aria-label="Buscar no compêndio">
+              <Icon name="search" size={19}/><span>Buscar no compêndio</span><kbd>/</kbd>
+            </button>
+          </div>
+        </header>
+        <main id="main-content" class="main-content">
+          {crumbs.length > 0 && (
+            <nav aria-label="Você está aqui" class="breadcrumbs">
+              <a href={sitePath()}>Início</a>
+              {crumbs.map((crumb) => (
+                <><Icon name="chevron" size={13}/>{crumb.href ? <a href={crumb.href}>{crumb.title}</a> : <span aria-current="page">{crumb.title}</span>}</>
+              ))}
+            </nav>
+          )}
+          <slot/>
+        </main>
+        <footer class="site-footer">
+          <p><strong>AVALON</strong> · Beta</p>
+          <p>Arquivo de referência em revisão editorial.</p>
+          <div class="footer-bottom"><span>Entre o tempo e o infinito.</span><span>✦ Compêndio de Avalon</span></div>
+        </footer>
+      </div>
+    </div>
+
+    <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title">
+      <div class="search-head">
+        <Icon name="search" size={22}/>
+        <h2 id="search-title">Buscar no Observatório</h2>
+        <button type="button" data-close-search aria-label="Fechar busca"><Icon name="close" size={20}/></button>
+      </div>
+      <label class="visually-hidden" for="global-search">Busque por raças, origens, regiões, perícias ou habilidades</label>
+      <input id="global-search" type="search" placeholder="Digite um nome, tema ou palavra..." autocomplete="off"/>
+      <p class="search-hint">Experimente “Elfos”, “Antory”, “Ancestral” ou “Combate”.</p>
+      <div id="search-results" class="search-results" aria-live="polite"></div>
+      <div class="search-bottom"><span><kbd>Esc</kbd> fechar</span><span>Arquivo de referência</span></div>
+    </dialog>
+    <script type="application/json" id="site-search-data" set:html={json}></script>
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>

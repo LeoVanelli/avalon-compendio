@@ -1,0 +1,14 @@
+{
+  "root": {
+    "props": {}
+  },
+  "content": [
+    {
+      "type": "Markdown",
+      "props": {
+        "id": "intro-avalon",
+        "body": "## Avalon, o Começo\n\nAqui você encontrará a maioria das coisas referentes ao Avalon. (em construção)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+editor-backups/
+editor-trash/
+.DS_Store
+.env
+.env.*
+!.env.example

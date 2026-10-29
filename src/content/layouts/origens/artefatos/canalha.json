@@ -1,0 +1,38 @@
+{
+  "root": { "props": {} },
+  "content": [
+    { "type": "Heading", "props": { "title": "Opções de Habilidades", "level": "h2" } },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "charme-natural",
+        "name": "Charme Natural",
+        "traits": "",
+        "kind": "CANALHA",
+        "cost": "25 de mana, UMA AÇÃO",
+        "range": "DISTÂNCIA PADRÃO",
+        "duration": "3 turnos em combate; 2 ações fora de combate",
+        "limit": "",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Dentro ou fora de combate, um olhar é suficiente — o usuário trava contato visual com o alvo iniciando uma disputa de Ego × Constituição, com +1 na rolagem para quem tiver o maior valor. Vencendo a DT, aplica [Charme]."
+      }
+    },
+    {
+      "type": "Ability",
+      "props": {
+        "id": "maos-leves",
+        "name": "Mãos Leves",
+        "traits": "",
+        "kind": "CANALHA",
+        "cost": "15 de mana, UMA AÇÃO",
+        "range": "DISTÂNCIA CORPO-A-CORPO",
+        "duration": "",
+        "limit": "",
+        "cooldown": "",
+        "requirements": "",
+        "effect": "Com um toque discreto, o Canalha tenta apanhar um item do alvo rolando 1d100 + 1 por cada 4 pontos de Sorte — quanto maior o resultado, melhor o item obtido. Usado mais de 2 vezes contra o mesmo alvo, é automaticamente percebido."
+      }
+    }
+  ]
+}
